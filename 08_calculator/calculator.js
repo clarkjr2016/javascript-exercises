@@ -16,19 +16,39 @@ if (a.length === 0) {
   };
 
 
-const multiply = function() {
+const multiply = function(a) {
+ let result = a.reduce((a,b) => {return a * b});
+ return result;
 
 };
 
-const power = function() {
+const power = function(n,p) {
+  let number = n;
+  let powerReturn = [];
+	for (i = 0; i < p; i++) {
+   powerReturn.push(n);
+  }
+return powerReturn.reduce((a,b) => {return a * b})
+
+};
+
+const factorial = function(f) {
+  let array = [];
+  let value;
+
+  if (f === 0) {
+    value = 1;
+  } else {
+  for (i = 1; i <= f; i++) {
+    array.push(i);
+  value = array.reduce((a,b) => {return a * b})
+  }
+
+  } return value;
 	
 };
 
-const factorial = function() {
-	
-};
-
-sum([2,4]);
+factorial(3);
 
 // Do not edit below this line
 module.exports = {
