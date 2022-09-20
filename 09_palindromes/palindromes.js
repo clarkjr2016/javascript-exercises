@@ -11,6 +11,14 @@ const palindromes = function (word) {
         }
     }
    let newArray = array.map(x => x.toLowerCase());
+   for (const w of newArray) {
+       if (w == " ") {
+           const index = newArray.indexOf(w);
+           let space = newArray.splice(index,1);
+       } else {
+           continue;
+       }
+   }
 let noPunctuation = newArray.join("");
     let reversal = newArray.reverse();
     
