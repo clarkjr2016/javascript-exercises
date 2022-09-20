@@ -1,20 +1,22 @@
 const palindromes = function (word) {
     let reverse;
     let array = word.split("");
-    let reversal = array.reverse();
-    for (const w of reversal) {
+    for (const w of array) {
         if (/[a-zA-Z]/.test(w) === false) {
-           const index = reversal.indexOf(w);
-          let nonWord = reversal.splice(index,1)
-          
-          reversal.push(nonWord);
-        } else {
+           const index = array.indexOf(w);
+          let nonWord = array.splice(index,1)
+        }
+        else {
             continue;
         }
     }
+   let newArray = array.map(x => x.toLowerCase());
+let noPunctuation = newArray.join("");
+    let reversal = newArray.reverse();
+    
     reverse = reversal.join("")
     let finalValue;
-    if (reverse === word) {
+    if (reverse === noPunctuation) {
         finalValue = true;
     } else {
         finalValue = false;
@@ -23,7 +25,7 @@ const palindromes = function (word) {
     return finalValue;
 };
 
-palindromes("racecar!");
+palindromes("A car, a man, a maraca.");
 
 // Do not edit below this line
 module.exports = palindromes;
