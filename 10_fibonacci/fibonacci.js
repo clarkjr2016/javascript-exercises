@@ -14,7 +14,7 @@ for (i = 2; array.length < n; i++) {
     }
     
 }
-return array;
+return array.pop();
 };
 
 fibonacci(-1)
